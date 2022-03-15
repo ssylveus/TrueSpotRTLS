@@ -30,13 +30,11 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.0'
 
-  #s.source_files = 'TSRTLS/Classes/**/*'
-  s.ios.source_files  = "TSRTLS/**/*.swift"
-  #s.vendored_libraries = 'TSRTLS/Classes/FeasySDK/FeasySDK/libFscBleCentralSDK.a'
-  s.resources = "**/*.{png,jpeg,jpg,storyboard,xib,xcassets,mp3}"
+  s.source_files = 'TSRTLS/TSRTLS/Classes/**/*.{png,jpeg,jpg,storyboard,xib,mp3,swift,h,m}'
+  s.resources = "TSRTLS/TSRTLS/Assets/**/*.{png,jpeg,jpg,xcassets,mp3}"
 
   # s.resource_bundles = {
-  #   'TSRTLS' => ['TSRTLS/Assets/*.png', 'TSRTLS/Assets/*.mp3', 'TSRTLS/Assets/*.xcassets']
+  #   'TSRTLS' => ['TSRTLS/TSRTLS/Assets/*.png', 'TSRTLS/TSRTLS/Assets/*.mp3', 'TSRTLS/TSRTLS/Assets/*.xcassets']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

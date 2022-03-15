@@ -18,8 +18,6 @@
   "platforms": {
     "ios": "11.0"
   },
-  "ios": {
-    "source_files": "TSRTLS/**/*.swift"
-  },
-  "resources": "**/*.{png,jpeg,jpg,storyboard,xib,xcassets,mp3}"
+  "source_files": "TSRTLS/TSRTLS/Classes/**/*.{png,jpeg,jpg,storyboard,xib,mp3,swift,h,m}",
+  "resources": "TSRTLS/TSRTLS/Assets/**/*.{png,jpeg,jpg,xcassets,mp3}"
 }
