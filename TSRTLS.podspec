@@ -30,7 +30,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'TSRTLS/TSRTLS/Classes/**/*.{storyboard,mp3,swift}'
+  s.source_files = 'TSRTLS/TSRTLS/Classes/**/*.{storyboard,swift}'
   s.resources = "TSRTLS/TSRTLS/Assets/**/*.{xcassets,mp3}"
 
   # s.resource_bundles = {
