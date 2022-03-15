@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/Steeven Sylveus/TSRTLS'
+  s.homepage         = 'https://bitbucket.org/ssylveusTruespot/'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Steeven Sylveus' => 'steevensylveus@gmail.com' }
@@ -32,8 +32,8 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'TSRTLS/Classes/**/*'
   s.source_files  = "TSRTLS/**/*.{h,m,swift}"
-  s.source_files  = "TSRTLS/**/*.{h,m,swift}"
-  s.vendored_libraries = 'TSRTLS/Classes/FeasySDK/FeasySDK/libFscBleCentralSDK.a'
+  s.source_files  = "TSRTLS/**/*.{swift}"
+  #s.vendored_libraries = 'TSRTLS/Classes/FeasySDK/FeasySDK/libFscBleCentralSDK.a'
   s.resources = "**/*.{png,jpeg,jpg,storyboard,xib,xcassets,mp3}"
 
   # s.resource_bundles = {
