@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import TSRTLS
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        TrueSpot.shared.launchTruedarMode(from: self, device: device)
     }
 
     override func didReceiveMemoryWarning() {

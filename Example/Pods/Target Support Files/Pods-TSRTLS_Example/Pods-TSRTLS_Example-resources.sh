@@ -97,20 +97,12 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/../TSRTLS/Base.lproj/LaunchScreen.xib"
-  install_resource "${PODS_ROOT}/../TSRTLS/Base.lproj/Main.storyboard"
-  install_resource "${PODS_ROOT}/../../hollow.mp3"
-  install_resource "${PODS_ROOT}/../../TSRTLS/TSRTLS/Classes/Views/TrueSpot.storyboard"
-  install_resource "${PODS_ROOT}/../../Assets.xcassets"
-  install_resource "${PODS_ROOT}/../TSRTLS/Images.xcassets"
+  install_resource "${PODS_ROOT}/../../TSRTLS/TSRTLS/Assets/hollow.mp3"
+  install_resource "${PODS_ROOT}/../../TSRTLS/TSRTLS/Assets/Assets.xcassets"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/../TSRTLS/Base.lproj/LaunchScreen.xib"
-  install_resource "${PODS_ROOT}/../TSRTLS/Base.lproj/Main.storyboard"
-  install_resource "${PODS_ROOT}/../../hollow.mp3"
-  install_resource "${PODS_ROOT}/../../TSRTLS/TSRTLS/Classes/Views/TrueSpot.storyboard"
-  install_resource "${PODS_ROOT}/../../Assets.xcassets"
-  install_resource "${PODS_ROOT}/../TSRTLS/Images.xcassets"
+  install_resource "${PODS_ROOT}/../../TSRTLS/TSRTLS/Assets/hollow.mp3"
+  install_resource "${PODS_ROOT}/../../TSRTLS/TSRTLS/Assets/Assets.xcassets"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
