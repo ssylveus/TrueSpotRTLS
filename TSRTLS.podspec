@@ -31,7 +31,6 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '11.0'
 
   s.source_files = 'TSRTLS/Classes/**/*'
-  s.source_files  = "TSRTLS/**/*.{h,m,swift}"
   s.source_files  = "TSRTLS/**/*.{swift}"
   #s.vendored_libraries = 'TSRTLS/Classes/FeasySDK/FeasySDK/libFscBleCentralSDK.a'
   s.resources = "**/*.{png,jpeg,jpg,storyboard,xib,xcassets,mp3}"
