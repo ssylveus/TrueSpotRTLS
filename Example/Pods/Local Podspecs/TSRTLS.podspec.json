@@ -1,6 +1,6 @@
 {
   "name": "TSRTLS",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "summary": "A short description of TSRTLS.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/Steeven Sylveus/TSRTLS",
@@ -13,13 +13,14 @@
   },
   "source": {
     "git": "https://github.com/Steeven Sylveus/TSRTLS.git",
-    "tag": "0.1.0"
+    "tag": "1.0.0"
   },
   "platforms": {
     "ios": "11.0"
   },
   "source_files": "TSRTLS/**/*.{h,m,swift}",
   "vendored_libraries": "TSRTLS/Classes/FeasySDK/FeasySDK/libFscBleCentralSDK.a",
+  "resources": "**/*.{png,jpeg,jpg,storyboard,xib,xcassets,mp3}",
   "resource_bundles": {
     "TSRTLS": [
       "TSRTLS/Assets/*.png",

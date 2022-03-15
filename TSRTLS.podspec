@@ -25,7 +25,7 @@ TODO: Add long description of the pod here.
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Steeven Sylveus' => 'steevensylveus@gmail.com' }
-  s.source           = { :git => 'https://github.com/Steeven Sylveus/TSRTLS.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://ssylveusTruespot@bitbucket.org/ssylveusTruespot/rtls-sdk-ios.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '11.0'
@@ -34,7 +34,8 @@ TODO: Add long description of the pod here.
   s.source_files  = "TSRTLS/**/*.{h,m,swift}"
   s.source_files  = "TSRTLS/**/*.{h,m,swift}"
   s.vendored_libraries = 'TSRTLS/Classes/FeasySDK/FeasySDK/libFscBleCentralSDK.a'
-  
+  s.resources = "**/*.{png,jpeg,jpg,storyboard,xib,xcassets,mp3}"
+
   s.resource_bundles = {
     'TSRTLS' => ['TSRTLS/Assets/*.png', 'TSRTLS/Assets/*.mp3', 'TSRTLS/Assets/*.xcassets']
   }
