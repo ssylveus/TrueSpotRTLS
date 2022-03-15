@@ -12,7 +12,7 @@ TSRTLS is TrueSpot Real Time Location Services SDK. Allows you to quickly find t
 The SDK can be added to your project using [CocoaPods dependency manager](http://blog.cocoapods.org/Pod-Authors-Guide-to-CocoaPods-Frameworks/) by adding the following line to your `Podfile`:
 
 ```ruby
-pod 'TSRTLS'
+pod 'TSRTLS', :git => 'https://github.com/ssylveus/TrueSpotRTLS.git', :branch => 'master'
 ```
 
 ### Exposed Classes ###
