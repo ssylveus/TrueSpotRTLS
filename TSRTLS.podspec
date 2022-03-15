@@ -36,9 +36,9 @@ TODO: Add long description of the pod here.
   s.vendored_libraries = 'TSRTLS/Classes/FeasySDK/FeasySDK/libFscBleCentralSDK.a'
   s.resources = "**/*.{png,jpeg,jpg,storyboard,xib,xcassets,mp3}"
 
-  s.resource_bundles = {
-    'TSRTLS' => ['TSRTLS/Assets/*.png', 'TSRTLS/Assets/*.mp3', 'TSRTLS/Assets/*.xcassets']
-  }
+  # s.resource_bundles = {
+  #   'TSRTLS' => ['TSRTLS/Assets/*.png', 'TSRTLS/Assets/*.mp3', 'TSRTLS/Assets/*.xcassets']
+  # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
