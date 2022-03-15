@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TSRTLS'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'A short description of TSRTLS.'
 
 # This description is used to generate tags and improve search results.
@@ -32,7 +32,8 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'TSRTLS/Classes/**/*'
   s.source_files  = "TSRTLS/**/*.{h,m,swift}"
-  s.vendored_libraries = 'FeasySDK/FeasySDK/libFscBleCentralSDK.a'
+  s.source_files  = "TSRTLS/**/*.{h,m,swift}"
+  s.vendored_libraries = 'TSRTLS/Classes/FeasySDK/FeasySDK/libFscBleCentralSDK.a'
   
   s.resource_bundles = {
     'TSRTLS' => ['TSRTLS/Assets/*.png', 'TSRTLS/Assets/*.mp3', 'TSRTLS/Assets/*.xcassets']

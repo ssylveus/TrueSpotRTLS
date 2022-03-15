@@ -19,7 +19,7 @@
     "ios": "11.0"
   },
   "source_files": "TSRTLS/**/*.{h,m,swift}",
-  "vendored_libraries": "FeasySDK/FeasySDK/libFscBleCentralSDK.a",
+  "vendored_libraries": "TSRTLS/Classes/FeasySDK/FeasySDK/libFscBleCentralSDK.a",
   "resource_bundles": {
     "TSRTLS": [
       "TSRTLS/Assets/*.png",
