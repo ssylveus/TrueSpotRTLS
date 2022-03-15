@@ -1,6 +1,6 @@
 # TrueSpot RTLS SDK Documentation #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+TSRTLS is TrueSpot Real Time Location Services SDK. Allows you to quickly find tags that are tied to specific assets.
 
 ### Features ###
 - Get list of tags
