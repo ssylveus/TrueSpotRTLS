@@ -1,6 +1,6 @@
 {
   "name": "TSRTLS",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "summary": "TSRTLS is TrueSpot Real Time Location Services SDK.",
   "description": "TSRTLS is TrueSpot Real Time Location Services SDK. Allows you to quickly find tags that are tied to specific assets.",
   "homepage": "https://bitbucket.org/ssylveusTruespot/",
@@ -13,11 +13,11 @@
   },
   "source": {
     "git": "https://github.com/ssylveus/TrueSpotRTLS.git",
-    "tag": "1.0.0"
+    "tag": "1.0.2"
   },
   "platforms": {
     "ios": "11.0"
   },
-  "source_files": "TSRTLS/TSRTLS/Classes/**/*.{storyboard,mp3,swift}",
+  "source_files": "TSRTLS/TSRTLS/Classes/**/*.{storyboard,swift}",
   "resources": "TSRTLS/TSRTLS/Assets/**/*.{xcassets,mp3}"
 }
