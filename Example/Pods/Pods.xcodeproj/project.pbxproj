@@ -22,6 +22,13 @@
 		92475B9F92FB708FA953E19F886F0630 /* TSRTLS-TSRTLS in Resources */ = {isa = PBXBuildFile; fileRef = 357CB0EDE17E8862FA459E37A77B7804 /* TSRTLS-TSRTLS */; };
 		95A0A512ABADA48C791AFCE6ACD2FC87 /* BeaconServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA04AC0572D96F5EF1904C098439498 /* BeaconServices.swift */; };
 		997B4042B86200C7A50CEF1DDF144DF1 /* Pods-TSRTLS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 981B3E066D44D01FCF3EA68206AB0167 /* Pods-TSRTLS_Tests-dummy.m */; };
+		A270D5D127E05B0B006B4D1D /* FeasyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A270D5C827E05B0B006B4D1D /* FeasyManager.swift */; };
+		A270D5D227E05B0B006B4D1D /* FWPeripheralWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A270D5CA27E05B0B006B4D1D /* FWPeripheralWrapper.h */; };
+		A270D5D327E05B0B006B4D1D /* FscBleCentralApi.h in Headers */ = {isa = PBXBuildFile; fileRef = A270D5CB27E05B0B006B4D1D /* FscBleCentralApi.h */; };
+		A270D5D427E05B0B006B4D1D /* libFscBleCentralSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A270D5CC27E05B0B006B4D1D /* libFscBleCentralSDK.a */; };
+		A270D5D527E05B0B006B4D1D /* BeaconBean.h in Headers */ = {isa = PBXBuildFile; fileRef = A270D5CD27E05B0B006B4D1D /* BeaconBean.h */; };
+		A270D5D627E05B0B006B4D1D /* FEBluetooth.h in Headers */ = {isa = PBXBuildFile; fileRef = A270D5CF27E05B0B006B4D1D /* FEBluetooth.h */; };
+		A270D5D727E05B0B006B4D1D /* FEBluetooth.m in Sources */ = {isa = PBXBuildFile; fileRef = A270D5D027E05B0B006B4D1D /* FEBluetooth.m */; };
 		ABD006E9D258A229B97EB7C98D2A32A7 /* Codable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8661CBAAF50CBF224C11E3BF53B9FF23 /* Codable+Extensions.swift */; };
 		B6443B5886DD84698DCA51CE4BAD6861 /* Pods-TSRTLS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A756123B803C30C18455CA5459C119BD /* Pods-TSRTLS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1FB49300B0C59726FA68CA7D67D449D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D75CBD747758E152D37F08F93AA798 /* Bundle+Extensions.swift */; };
@@ -70,14 +77,14 @@
 		357CB0EDE17E8862FA459E37A77B7804 /* TSRTLS-TSRTLS */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "TSRTLS-TSRTLS"; path = TSRTLS.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		38891D4DA5D101E5B8A2F6FE7DB375AD /* TrueSpot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrueSpot.swift; sourceTree = "<group>"; };
 		3B9F820F0A3E87442137B2EFB44793DB /* URL+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
-		454C605E8EAA24EA3528112DB7663546 /* TSRTLS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TSRTLS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		454C605E8EAA24EA3528112DB7663546 /* TSRTLS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TSRTLS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		48B83494CAE68DDFC896A6D2DC3D7348 /* TSRTLS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSRTLS-dummy.m"; sourceTree = "<group>"; };
 		48D62F23526014ED545E51C81DDCB7E7 /* Pods-TSRTLS_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-TSRTLS_Example"; path = Pods_TSRTLS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB28DA439FCCDA4E60254B362668236 /* TSRTLS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSRTLS.release.xcconfig; sourceTree = "<group>"; };
 		50F9AA02A36CB9B7A92CE069CD0DABFE /* TSDevice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSDevice.swift; sourceTree = "<group>"; };
 		5902D74262B879672E069FB32E019F5E /* Date+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		6A380947C6073C06540BE7F6F8D60187 /* Pods-TSRTLS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TSRTLS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		6CF9CBD7D3C04ECAA596064CFEC25387 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		6CF9CBD7D3C04ECAA596064CFEC25387 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6F06DFFBD54E9EC2851E56E7A8142366 /* Pods-TSRTLS_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TSRTLS_Example-frameworks.sh"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		79D9C8A1F8C66C24F5258C932EDE98BE /* TSRTLS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TSRTLS.debug.xcconfig; sourceTree = "<group>"; };
@@ -89,14 +96,21 @@
 		90115FE8108E3EA8138542A5DA967435 /* Pods-TSRTLS_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSRTLS_Tests-Info.plist"; sourceTree = "<group>"; };
 		92B4AA21D6121AC80BEED93E23AC81CC /* Pods-TSRTLS_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSRTLS_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		981B3E066D44D01FCF3EA68206AB0167 /* Pods-TSRTLS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TSRTLS_Tests-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A270D5C827E05B0B006B4D1D /* FeasyManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeasyManager.swift; sourceTree = "<group>"; };
+		A270D5CA27E05B0B006B4D1D /* FWPeripheralWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWPeripheralWrapper.h; sourceTree = "<group>"; };
+		A270D5CB27E05B0B006B4D1D /* FscBleCentralApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FscBleCentralApi.h; sourceTree = "<group>"; };
+		A270D5CC27E05B0B006B4D1D /* libFscBleCentralSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFscBleCentralSDK.a; sourceTree = "<group>"; };
+		A270D5CD27E05B0B006B4D1D /* BeaconBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconBean.h; sourceTree = "<group>"; };
+		A270D5CF27E05B0B006B4D1D /* FEBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FEBluetooth.h; sourceTree = "<group>"; };
+		A270D5D027E05B0B006B4D1D /* FEBluetooth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FEBluetooth.m; sourceTree = "<group>"; };
 		A5699317FCAE10AB11F7AB064A1D381F /* Pods-TSRTLS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TSRTLS_Tests.modulemap"; sourceTree = "<group>"; };
 		A756123B803C30C18455CA5459C119BD /* Pods-TSRTLS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TSRTLS_Example-umbrella.h"; sourceTree = "<group>"; };
 		B1209FA44244C484ED0F3E9DFF7A40E0 /* TSRTLS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TSRTLS-umbrella.h"; sourceTree = "<group>"; };
 		B40B8712985A6FEC54CA300A0CFC30E2 /* TSLocationManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSLocationManager.swift; sourceTree = "<group>"; };
 		B74FDF02DC9FAFD9830E4CF5F95ED07F /* Pods-TSRTLS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TSRTLS_Example-dummy.m"; sourceTree = "<group>"; };
 		BACA4866703387F44FF626EC9B000A95 /* TSBeacon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSBeacon.swift; sourceTree = "<group>"; };
-		C030A26E5492F532D02D5780DD5F06F3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C030A26E5492F532D02D5780DD5F06F3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C1F8958A65EE6D2AF207D9C5028BBE53 /* TSRTLS */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TSRTLS; path = TSRTLS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C64457F058FC1F3A96E0232894550E1F /* Pods-TSRTLS_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSRTLS_Example-Info.plist"; sourceTree = "<group>"; };
 		C8D75CBD747758E152D37F08F93AA798 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -132,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE4A9E2F85F8612A8365D1DAFE77C1E8 /* Foundation.framework in Frameworks */,
+				A270D5D427E05B0B006B4D1D /* libFscBleCentralSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +163,7 @@
 		0B1C0BBB520681B508EDBC0B98CF8B4C /* TSRTLS */ = {
 			isa = PBXGroup;
 			children = (
+				A270D5C727E05B0B006B4D1D /* FeasySDK */,
 				D0A876E2B64D6DCC9188988BA1349E5A /* Managers */,
 				4B548A83D8A8B5E683B3DD37EABB7E9C /* Models */,
 				233A797ACF0A29061434401808C9220D /* Network */,
@@ -252,6 +268,36 @@
 			path = "Target Support Files/Pods-TSRTLS_Example";
 			sourceTree = "<group>";
 		};
+		A270D5C727E05B0B006B4D1D /* FeasySDK */ = {
+			isa = PBXGroup;
+			children = (
+				A270D5C827E05B0B006B4D1D /* FeasyManager.swift */,
+				A270D5C927E05B0B006B4D1D /* FeasySDK */,
+				A270D5CE27E05B0B006B4D1D /* FeasyBluetooth */,
+			);
+			path = FeasySDK;
+			sourceTree = "<group>";
+		};
+		A270D5C927E05B0B006B4D1D /* FeasySDK */ = {
+			isa = PBXGroup;
+			children = (
+				A270D5CA27E05B0B006B4D1D /* FWPeripheralWrapper.h */,
+				A270D5CB27E05B0B006B4D1D /* FscBleCentralApi.h */,
+				A270D5CC27E05B0B006B4D1D /* libFscBleCentralSDK.a */,
+				A270D5CD27E05B0B006B4D1D /* BeaconBean.h */,
+			);
+			path = FeasySDK;
+			sourceTree = "<group>";
+		};
+		A270D5CE27E05B0B006B4D1D /* FeasyBluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				A270D5CF27E05B0B006B4D1D /* FEBluetooth.h */,
+				A270D5D027E05B0B006B4D1D /* FEBluetooth.m */,
+			);
+			path = FeasyBluetooth;
+			sourceTree = "<group>";
+		};
 		A7338E438DE8907AE334877613605423 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,7 +316,6 @@
 				5902D74262B879672E069FB32E019F5E /* Date+Extensions.swift */,
 				3B9F820F0A3E87442137B2EFB44793DB /* URL+Extensions.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -361,7 +406,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A270D5D527E05B0B006B4D1D /* BeaconBean.h in Headers */,
+				A270D5D327E05B0B006B4D1D /* FscBleCentralApi.h in Headers */,
+				A270D5D627E05B0B006B4D1D /* FEBluetooth.h in Headers */,
 				49D961486A145EA3A6DC6A68BB3D063F /* TSRTLS-umbrella.h in Headers */,
+				A270D5D227E05B0B006B4D1D /* FWPeripheralWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +559,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				95A0A512ABADA48C791AFCE6ACD2FC87 /* BeaconServices.swift in Sources */,
+				A270D5D727E05B0B006B4D1D /* FEBluetooth.m in Sources */,
+				A270D5D127E05B0B006B4D1D /* FeasyManager.swift in Sources */,
 				C1FB49300B0C59726FA68CA7D67D449D /* Bundle+Extensions.swift in Sources */,
 				ABD006E9D258A229B97EB7C98D2A32A7 /* Codable+Extensions.swift in Sources */,
 				0223AC4EE399456026932B81B6711438 /* Data+Extensions.swift in Sources */,
@@ -748,8 +799,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
