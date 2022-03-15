@@ -1,9 +1,9 @@
 {
   "name": "TSRTLS",
   "version": "1.0.0",
-  "summary": "A short description of TSRTLS.",
+  "summary": "TSRTLS is TrueSpot Real Time Location Services SDK.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Steeven Sylveus/TSRTLS",
+  "homepage": "https://bitbucket.org/ssylveusTruespot/",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,20 +12,12 @@
     "Steeven Sylveus": "steevensylveus@gmail.com"
   },
   "source": {
-    "git": "https://github.com/Steeven Sylveus/TSRTLS.git",
+    "git": "https://ssylveusTruespot@bitbucket.org/ssylveusTruespot/rtls-sdk-ios.git",
     "tag": "1.0.0"
   },
   "platforms": {
     "ios": "11.0"
   },
-  "source_files": "TSRTLS/**/*.{h,m,swift}",
-  "vendored_libraries": "TSRTLS/Classes/FeasySDK/FeasySDK/libFscBleCentralSDK.a",
-  "resources": "**/*.{png,jpeg,jpg,storyboard,xib,xcassets,mp3}",
-  "resource_bundles": {
-    "TSRTLS": [
-      "TSRTLS/Assets/*.png",
-      "TSRTLS/Assets/*.mp3",
-      "TSRTLS/Assets/*.xcassets"
-    ]
-  }
+  "source_files": "TSRTLS/**/*.{swift}",
+  "resources": "**/*.{png,jpeg,jpg,storyboard,xib,xcassets,mp3}"
 }
