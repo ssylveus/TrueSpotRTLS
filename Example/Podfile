@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '11.0'
+
+target 'TSRTLS_Example' do
+  pod 'TSRTLS', :path => '../'
+
+  target 'TSRTLS_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
