@@ -16,12 +16,21 @@ struct Credentials {
     static var appID: String?
     static var clientSecret: String?
     static var appInfo: TSApplication?
-    
+    static var apiID = "5eacf68e333c811bb1ec3e7d"
 }
 
 struct API {
+    //DEV
     static let authURL = "https://authprovider-d-us-c-api.azurewebsites.net/"
+    
+    //PROD
+    //static let authURL = "https://auth.truespot.com/"
+    
+    //DEV
     static let RTLSBaseURL = "https://rtls-d-us-c-api.azurewebsites.net/"
+    
+    //PROD
+    //static let RTLSBaseURL = "https://rtls.truespot.com/"
     
     struct Endpoints {
         static let authorization = "api/api-authorizations"
@@ -45,7 +54,7 @@ struct BeaconServices {
             ])
             .setPath(path: API.Endpoints.authorization)
             .addParmeters(params: [
-                "apiId": Credentials.appID ?? ""
+                "apiId": Credentials.apiID
             ])
             .setMethod(method: .post)
             .build(type: Authorization.self) { responseBody, responseHeader, error in
@@ -67,16 +76,28 @@ struct BeaconServices {
         WebService()
             .setPath(path: API.Endpoints.applications + "/\(appID)")
             .build(type: TSApplication.self) { responseBody, responseHeader, error in
-                Credentials.appInfo = responseBody as? TSApplication
+                //Credentials.appInfo = responseBody as? TSApplication
+                
+                TSLocationManager.shared.startScanning()
             }
     }
     
     func getTrackingDevices(completion: @escaping(_ devices: [TSDevice], _ error: Error?) -> Void) {
         
+//        WebService()
+//            .setPath(path: API.Endpoints.trackingDevices)
+//            .build(type: [TSDevice].self) { responseBody, responseHeader, error in
+//
+//                let devices = responseBody as? [TSDevice] ?? []
+//                TSBeaconManager.shared.updateTrackingDevices(devices: devices)
+//                completion(devices, error)
+//            }
+        
         WebService()
-            .setPath(path: API.Endpoints.trackingDevices)
+            .setURL(url: "https://mocki.io/")
+            .setPath(path: "v1/619ced0c-3c97-4dbc-9826-db0e26df7dce")
             .build(type: [TSDevice].self) { responseBody, responseHeader, error in
-
+                
                 let devices = responseBody as? [TSDevice] ?? []
                 TSBeaconManager.shared.updateTrackingDevices(devices: devices)
                 completion(devices, error)

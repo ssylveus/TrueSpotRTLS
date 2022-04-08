@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let secret = "A3s6v9y$B&E)H@McQfTjWnZr4u7w!z%C*F-JaNdRgUkXp2s5v8y/A?D(G+KbPeSh"
-        TrueSpot.configure(appId: "5eacf68e333c811bb1ec3e7d", clientSecret: secret, isDebugMode: true)
+        TrueSpot.configure(appId: "620c3f5ef840f63c650eca3e", clientSecret: secret, isDebugMode: true)
         return true
     }
 

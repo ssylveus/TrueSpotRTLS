@@ -27,9 +27,13 @@ public class TSLocationManager: NSObject, CLLocationManagerDelegate {
             }
             
             return regions
+        } else {
+            let region = CLBeaconRegion(proximityUUID: UUID(uuidString: "5C38DBDE-567C-4CCA-B1DA-40A8AD465656")!,
+                           identifier: "ranged beacons \(index)")
+            return [region]
         }
         
-        return []
+        //return []
     }()
 
     private let beaconRangeNotificationName = "beaconRange"
