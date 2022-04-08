@@ -23,18 +23,9 @@ public class TSBeacon {
     public var major: String?
     public var minor: String?
     public var proximity: CLProximity = .unknown
-    
-    init(json: [String: Any]) {
-        beaconId = json["beaconId"] as? String
-        name = json["name"] as? String
-        description = json["description"] as? String
-        beaconIdentifier = json["beaconIdentifier"] as? String
-        isActive = json["isActive"] as? Bool
-        vin = json["vin"] as? String
-        lat = json["lat"] as? Double
-        lng = json["lng"] as? Double
-    }
-    
+    public var assetIdentifier: String?
+    public var assetType: String?
+
     init(beacon: CLBeacon, currentLocation: CLLocation? = nil) {
         self.lat = currentLocation?.coordinate.latitude ?? 0
         self.lng = currentLocation?.coordinate.longitude ?? 0
@@ -53,16 +44,18 @@ public class TSBeacon {
         self.beaconIdentifier = beaconIdentifier
     }
     
-    init(data: [String: Any]) {
-        beaconIdentifier = data["beaconIdentifier"] as? String
-        timeStamp = data["timeStamp"] as? TimeInterval
-        lat = data["lat"] as? Double
-        lng = data["lng"] as? Double
-        RSSI = data["rssi"] as? Int
-        accuracy = data["accuracy"] as? Double
-        beaconId = data["uuid"] as? String
-        major = data["major"] as? String
-        minor = data["minor"] as? String
+    init(device: TSDevice) {
+        beaconIdentifier = device.tagIdentifier
+        //timeStamp = data["timeStamp"] as? TimeInterval
+        lat = device.latitude
+        lng = device.longitude
+        //RSSI = data["rssi"] as? Int
+        accuracy = device.accuracy
+        beaconId = device.uuid
+        major = device.major
+        minor = device.minor
+        assetIdentifier = device.assetIdentifier
+        assetType = device.assetType
     }
     
     func alreadyAssigned() -> Bool {

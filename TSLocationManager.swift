@@ -15,23 +15,29 @@ public class TSLocationManager: NSObject, CLLocationManagerDelegate {
     
     private var locationManager: CLLocationManager?
     public var currentLocation: CLLocation?
-    private lazy var beaconRegion: CLBeaconRegion = {
-        CLBeaconRegion(proximityUUID: UUID(uuidString: TSLocationManager.beaconUUID)!,
-                       identifier: "ranged beacons 1")
+    private lazy var beaconRegion: [CLBeaconRegion] = {
+        
+        if let uuids = Credentials.appInfo?.uuids {
+            var regions = [CLBeaconRegion]()
+            
+            uuids.enumerated().forEach { (index, uuid) in
+                let region = CLBeaconRegion(proximityUUID: UUID(uuidString: TSLocationManager.beaconUUID)!,
+                               identifier: "ranged beacons \(index)")
+                regions.append(region)
+            }
+            
+            return regions
+        }
+        
+        return []
     }()
 
     private let beaconRangeNotificationName = "beaconRange"
-    static var beaconUUID: String = ""
+    static var beaconUUID: String = "5C38DBDE-567C-4CCA-B1DA-40A8AD465656"
     
+    static var beaconUUIDs = ["5C38DBDE-567C-4CCA-B1DA-40A8AD465656"]
     
-    public static func configure(apiId: String, isDebugMode: Bool) {
-        TrueSpot.isDebugMode = isDebugMode
-        TSLocationManager.beaconUUID = beaconUUID
-        Credentials.apiId = apiId
-        
-        BeaconServices().authenticate()
-    }
-    
+   
     private override init () {
         super.init()
         requestLocationPermission()
@@ -53,13 +59,20 @@ public class TSLocationManager: NSObject, CLLocationManagerDelegate {
     
     public func startScanning() {
         updateLocation(true)
-        startMonitoring(beaconRegion)
+        
+        beaconRegion.forEach { region in
+            startMonitoring(region)
+        }
+       
         TSBeaconManager.shared.initializeBeaconObserver()
     }
     
     public func stopScanning() {
         updateLocation(false)
-        stopMonitoring(beaconRegion)
+        
+        beaconRegion.forEach { region in
+            stopMonitoring(region)
+        }
     }
     
     private func updateLocation(_ start: Bool) {
@@ -71,10 +84,17 @@ public class TSLocationManager: NSObject, CLLocationManagerDelegate {
         if start {
             print("=====Location Manager Start Updating======")
             manager.startUpdatingLocation()
-            startMonitoring(beaconRegion)
+            
+            beaconRegion.forEach { region in
+                startMonitoring(region)
+            }
+            
         } else {
             print("=====Location Manager Stop Updating======")
-            stopMonitoring(beaconRegion)
+            beaconRegion.forEach { region in
+                stopMonitoring(region)
+            }
+            
             manager.stopUpdatingLocation()
         }
     }

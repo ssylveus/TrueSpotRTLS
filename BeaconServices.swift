@@ -13,8 +13,9 @@ struct Authorization: Codable {
 
 struct Credentials {
     static var jwt: String?
-    static var apiId: String?
-    static var clientSecret = "A3s6v9y$B&E)H@McQfTjWnZr4u7w!z%C*F-JaNdRgUkXp2s5v8y/A?D(G+KbPeSh"
+    static var appID: String?
+    static var clientSecret: String?
+    static var appInfo: TSApplication?
     
 }
 
@@ -32,69 +33,66 @@ struct API {
 struct BeaconServices {
     
     func authenticate() {
+        
+        guard let secret = Credentials.clientSecret else {
+            return
+        }
+        
         WebService()
             .setURL(url: API.authURL)
             .setHeaders(headers: [
-                "Authorization": "Basic \(Credentials.clientSecret)"
+                "Authorization": "Basic \(secret)"
             ])
             .setPath(path: API.Endpoints.authorization)
             .addParmeters(params: [
-                "apiId": Credentials.apiId ?? ""
+                "apiId": Credentials.appID ?? ""
             ])
             .setMethod(method: .post)
             .build(type: Authorization.self) { responseBody, responseHeader, error in
                 if let response = responseBody as? Authorization {
                     Credentials.jwt = response.jwt
+                    self.getAppinfo(appID: Credentials.appID ?? "")
+                    self.getTrackingDevices { devices, error in
+                        
+                    }
                 }
             }
     }
     
     func getAppinfo(appID: String) {
+        if appID.isEmpty {
+            return
+        }
         
+        WebService()
+            .setPath(path: API.Endpoints.applications + "/\(appID)")
+            .build(type: TSApplication.self) { responseBody, responseHeader, error in
+                Credentials.appInfo = responseBody as? TSApplication
+            }
     }
     
-    func getTrackingDevices(completion: @escaping(_ devices: [String], _ error: Error?) -> Void) {
+    func getTrackingDevices(completion: @escaping(_ devices: [TSDevice], _ error: Error?) -> Void) {
         
         WebService()
             .setPath(path: API.Endpoints.trackingDevices)
-            .build(type: [String].self) { responseBody, responseHeader, error in
-                completion(responseBody as? [String] ?? [], error)
+            .build(type: [TSDevice].self) { responseBody, responseHeader, error in
+
+                let devices = responseBody as? [TSDevice] ?? []
+                TSBeaconManager.shared.updateTrackingDevices(devices: devices)
+                completion(devices, error)
             }
+    
     }
     
-    func getDeviceInfo(deviceID: String, completion: @escaping(_ device: TSDevice?, _ error: Error?) -> Void) {
+    func pair(assetIdentifier: String, assetType: String, tagId: String, completion: @escaping (_ device: TSDevice?, _ error: Error?) -> Void) {
         
         WebService()
-            .setPath(path: API.Endpoints.trackingDevices + "/\(deviceID)/locations")
-            .build(type: TSDevice.Location.self) { responseBody, responseHeader, error in
-                let location = (responseBody as? [TSDevice.Location])?.first
-                
-                WebService()
-                    .setPath(path: API.Endpoints.trackingDevices + "/\(deviceID)")
-                    .build(type: TSDevice.self) { responseBody, responseHeader, error in
-                        var device = responseBody as? TSDevice
-                        device?.location = location
-                        completion(device, error)
-                    }
-            }
-        
-        
-    }
-    
-    func getBeaconIdentifier(_ beaconData: [[String: Any]], completion: @escaping (_ beacons: [[String: Any]], _ error: Error?)->()) {
-        
-        WebService()
-            .setPath(path: Endpoints.beaconUIDConversion.rawValue)
+            .setPath(path: API.Endpoints.trackingDevices + "/\(tagId)/pairings")
             .setMethod(method: .post)
-            .setBody(body: beaconData)
-            .build { (responseBody, responseHeader, error) in
-                if let body = responseBody as? [[String: Any]] {
-                    completion(body, error)
-                } else {
-                    completion([], error)
-                }
+            .setBody(body: ["assetdentifier": assetIdentifier, "assetType": assetType])
+            .build(type: TSDevice.self) { responseBody, responseHeader, error in
                 
+                completion(responseBody as? TSDevice, error)
             }
     }
-    
 }

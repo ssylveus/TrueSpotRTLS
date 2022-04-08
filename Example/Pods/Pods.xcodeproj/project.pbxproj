@@ -23,13 +23,12 @@
 		92AAD530AD532253EFDBD567A7367140 /* BeaconServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064D4508C5D91FC0EDC10E698FA4FB7C /* BeaconServices.swift */; };
 		997B4042B86200C7A50CEF1DDF144DF1 /* Pods-TSRTLS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 981B3E066D44D01FCF3EA68206AB0167 /* Pods-TSRTLS_Tests-dummy.m */; };
 		9AC8C85DDB0C36A75F4A25059CCD75FA /* TSLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BFD8D2259EACE324026D91D1AA0879 /* TSLocationManager.swift */; };
+		A28BAA5B27FFECCB001CE7F3 /* TSApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28BAA5A27FFECCB001CE7F3 /* TSApplication.swift */; };
 		A4D3F00520D4F52A85421069196FEDC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		A6C93A7DC2BCD487185B32D3D3A0E8D5 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F5775E37A58967EE6DC3AEF0B6A517F /* Date+Extensions.swift */; };
-		B076CFE4E5E10D2E7E7F36E2E19FF53B /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3273614F383AECB2E1BED7E8764CE015 /* Tests.swift */; };
 		B490A5B690A42042D7E1606F6BE354D6 /* hollow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 84766BC47D95EDE917D4DD71DC8B451A /* hollow.mp3 */; };
 		B6443B5886DD84698DCA51CE4BAD6861 /* Pods-TSRTLS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A756123B803C30C18455CA5459C119BD /* Pods-TSRTLS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDFB26CFED148A67F8602CDE79352FF0 /* TSRTLS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B6D4DE3899DE9270C3583ECDED49C37 /* TSRTLS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C7ABEF04F9EA14704285441D7258B227 /* FeasyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65F075ADAFBCFED182080EAFA87649 /* FeasyManager.swift */; };
 		C8BEA4AC69781BEFCFA8C414C6CA1161 /* TrueSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76FC86553AB711CB0A04C3712EB2A58 /* TrueSpot.swift */; };
 		CCEAD34B529CECC6217BCA8C3E3084D2 /* Pods-TSRTLS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B74FDF02DC9FAFD9830E4CF5F95ED07F /* Pods-TSRTLS_Example-dummy.m */; };
 		CF12597FBB94F98E286FE146E553F0E5 /* Pods-TSRTLS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CE9882F447D3306AAC61A92AA778C50 /* Pods-TSRTLS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -63,14 +62,13 @@
 		064D4508C5D91FC0EDC10E698FA4FB7C /* BeaconServices.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BeaconServices.swift; sourceTree = "<group>"; };
 		07837D67718ECA50548DEDA438DFAC68 /* Pods-TSRTLS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TSRTLS_Example.modulemap"; sourceTree = "<group>"; };
 		0D6DC2326612AAB55016A1053D4FCBDA /* Pods-TSRTLS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TSRTLS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0FEBF4B1E953501E3AC43FD7673750DB /* TSRTLS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TSRTLS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0FEBF4B1E953501E3AC43FD7673750DB /* TSRTLS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TSRTLS.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		13B8D8681F99B58AFF9FF9FE17000D01 /* TSBeaconManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TSBeaconManager.swift; sourceTree = "<group>"; };
-		218602A91E9B73947F89651A76F8E255 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		218602A91E9B73947F89651A76F8E255 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		23C59455BCC9F1A5C9911B7ADA935781 /* TSRTLS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TSRTLS-dummy.m"; sourceTree = "<group>"; };
 		23FDF046ED60019BC768D50A517F2591 /* URL+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		249390FB79324E1FFE78F0DBC5885965 /* ViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		267FB9494A854F9F49F195486D16035C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		2E65F075ADAFBCFED182080EAFA87649 /* FeasyManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FeasyManager.swift; sourceTree = "<group>"; };
+		267FB9494A854F9F49F195486D16035C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3273614F383AECB2E1BED7E8764CE015 /* Tests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		337F8817CAF5F7A08A0181E03666AEA8 /* TSRTLS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TSRTLS-Info.plist"; sourceTree = "<group>"; };
 		3596DF7D34A0D8DB1F91564DF46D5E9A /* Main.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,7 +93,8 @@
 		92B4AA21D6121AC80BEED93E23AC81CC /* Pods-TSRTLS_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TSRTLS_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		94AE18D940BABF6F6DC9C4B7DD1C671C /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		981B3E066D44D01FCF3EA68206AB0167 /* Pods-TSRTLS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TSRTLS_Tests-dummy.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A28BAA5A27FFECCB001CE7F3 /* TSApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSApplication.swift; sourceTree = "<group>"; };
 		A5699317FCAE10AB11F7AB064A1D381F /* Pods-TSRTLS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TSRTLS_Tests.modulemap"; sourceTree = "<group>"; };
 		A756123B803C30C18455CA5459C119BD /* Pods-TSRTLS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TSRTLS_Example-umbrella.h"; sourceTree = "<group>"; };
 		AE6EBFAA94B0624E552AF6B41DEB3465 /* PairResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PairResponse.swift; sourceTree = "<group>"; };
@@ -146,15 +145,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0101F705B35DDFE972075E8A44782782 /* FeasySDK */ = {
-			isa = PBXGroup;
-			children = (
-				2E65F075ADAFBCFED182080EAFA87649 /* FeasyManager.swift */,
-			);
-			name = FeasySDK;
-			path = FeasySDK;
-			sourceTree = "<group>";
-		};
 		156F767877E535C1084913CD6F1C2C8D /* Pods-TSRTLS_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +167,6 @@
 				4AF624B04F5D764DCE5E71BE6807F143 /* Tests */,
 				4175165F29B0A5002CC536501AB638DE /* TSRTLS */,
 			);
-			name = Example;
 			path = Example;
 			sourceTree = "<group>";
 		};
@@ -189,7 +178,6 @@
 				E18B93A99DF187E00241814B33389191 /* Main.storyboard */,
 				249390FB79324E1FFE78F0DBC5885965 /* ViewController.swift */,
 			);
-			name = TSRTLS;
 			path = TSRTLS;
 			sourceTree = "<group>";
 		};
@@ -198,7 +186,6 @@
 			children = (
 				3273614F383AECB2E1BED7E8764CE015 /* Tests.swift */,
 			);
-			name = Tests;
 			path = Tests;
 			sourceTree = "<group>";
 		};
@@ -237,11 +224,11 @@
 				13B8D8681F99B58AFF9FF9FE17000D01 /* TSBeaconManager.swift */,
 				B0D905A21723951E81ACB6F5A4C6DEF4 /* TSConstants.swift */,
 				6DC5F491BDA831475AD8DF4715DB8A6A /* TSDevice.swift */,
+				A28BAA5A27FFECCB001CE7F3 /* TSApplication.swift */,
 				76BFD8D2259EACE324026D91D1AA0879 /* TSLocationManager.swift */,
 				23FDF046ED60019BC768D50A517F2591 /* URL+Extensions.swift */,
 				8A271840F1F06441B06F994405176C6B /* WebService.swift */,
 				34B03F613D2F2EBFA3094D203785C50D /* Example */,
-				0101F705B35DDFE972075E8A44782782 /* FeasySDK */,
 				FA751333DFD01043C52E726002BE8945 /* Pod */,
 				E004640F5055914F92208B980EAC68AE /* Support Files */,
 			);
@@ -494,14 +481,13 @@
 				69B2D5E0A2ACF258E0B8277795854FB2 /* AppDelegate.swift in Sources */,
 				92AAD530AD532253EFDBD567A7367140 /* BeaconServices.swift in Sources */,
 				1FF4457559B44BED43123033A7D9A9BC /* Bundle+Extensions.swift in Sources */,
+				A28BAA5B27FFECCB001CE7F3 /* TSApplication.swift in Sources */,
 				DDFA6987ADF5A8484576A71145305D18 /* Codable+Extensions.swift in Sources */,
 				046D9FEC8FA4EF1C83C234F1688A3337 /* Data+Extensions.swift in Sources */,
 				A6C93A7DC2BCD487185B32D3D3A0E8D5 /* Date+Extensions.swift in Sources */,
-				C7ABEF04F9EA14704285441D7258B227 /* FeasyManager.swift in Sources */,
 				73BC72D070A32808276674B71A9DD923 /* Main.storyboard in Sources */,
 				F4D75EAEA3A28BB9CBDB1A7BA35C1768 /* ModarViewController.swift in Sources */,
 				F1CB057A0B736A7622CAE10D331BEC40 /* PairResponse.swift in Sources */,
-				B076CFE4E5E10D2E7E7F36E2E19FF53B /* Tests.swift in Sources */,
 				494BCED6DCEA6101542511D2632C6D3D /* TrueSpot.storyboard in Sources */,
 				C8BEA4AC69781BEFCFA8C414C6CA1161 /* TrueSpot.swift in Sources */,
 				680D3C0A2210B89A6020F4FCDA13E5A1 /* TSBeacon.swift in Sources */,
@@ -702,8 +688,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

@@ -85,7 +85,7 @@ class ModarViewController: UIViewController {
         initializeBeaconObserver()
         resetBeaconDetectionTimer()
         
-        if let timeStamp = device?.location?.timestamp {
+        if let timeStamp = device?.locationUpdateTimestamp {
             lastSeenLabel.text = "Last seen: \(timeStamp)"
         }
         

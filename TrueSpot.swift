@@ -14,11 +14,11 @@ public class TrueSpot {
     
     static var isDebugMode = false
     
-    public static func configure(apiId: String, isDebugMode: Bool) {
+    public static func configure(appId: String, clientSecret: String, isDebugMode: Bool) {
         TrueSpot.isDebugMode = isDebugMode
         //TSLocationManager.beaconUUID = beaconUUID
-        Credentials.apiId = apiId
-        
+        Credentials.appID = appId
+        Credentials.clientSecret = clientSecret
         BeaconServices().authenticate()
     }
     
@@ -39,17 +39,20 @@ public class TrueSpot {
         viewController.present(truedarVC, animated: true, completion: nil)
     }
     
+    public func observeBeaconRanged(completion: @escaping(([TSBeacon])) -> Void) -> NSObjectProtocol {
+        return TSBeaconManager.shared.observeBeaconRanged(completion: completion)
+    }
+    
 }
 
 // Mark Services
 extension TrueSpot {
-    public func getTrackingDevices(completion: @escaping(_ devices: [String], _ error: Error?) -> Void) {
+    public func getTrackingDevices(completion: @escaping(_ devices: [TSDevice], _ error: Error?) -> Void) {
         BeaconServices().getTrackingDevices(completion: completion)
     }
     
-    public func getDeviceInfo(deviceID: String, completion: @escaping(_ device: TSDevice?, _ error: Error?) -> Void) {
-        
-        BeaconServices().getDeviceInfo(deviceID: deviceID, completion: completion)
+    public func pair(assetIdentifier: String, assetType: String, tagId: String, completion: @escaping (_ device: TSDevice?, _ error: Error?) -> Void) {
+        BeaconServices().pair(assetIdentifier: assetIdentifier, assetType: assetType, tagId: tagId, completion: completion)
     }
 }
 
