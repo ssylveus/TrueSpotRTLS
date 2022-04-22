@@ -18,8 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //Prod
+        //let secret = "x8KKW+fIrgikKASLL0CxzqmxAbG9iz6ZUe32bRq+6UYszf8PuWQoa9jQaTY+gLla"
+        
+        //Dev
         let secret = "A3s6v9y$B&E)H@McQfTjWnZr4u7w!z%C*F-JaNdRgUkXp2s5v8y/A?D(G+KbPeSh"
-        TrueSpot.configure(appId: "620c3f5ef840f63c650eca3e", clientSecret: secret, isDebugMode: true)
+        
+        //Dev
+        let tenantId = "5c74604185f8c116cc5f5382"
+        
+        //Prod
+        //let tenantId = "5da7715dd7eafd2aec878b6c"
+        
+        TrueSpot.configure(tenatId: tenantId, clientSecret: secret, isDebugMode: true)
         return true
     }
 

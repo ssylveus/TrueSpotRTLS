@@ -21,13 +21,13 @@ public class TrueSpot {
     
     /// Configure is the entry point to initializing the SDK.
     /// - Parameters:
-    ///   - appId: the appID for your organization
-    ///   - clientSecret: client secret given to you
+    ///   - tenatId: the tenantId for your organization - will be provided for your organization
+    ///   - clientSecret: client secret - will be provided for your organization
     ///   - isDebugMode: If turn on, you can see logs as you use the SDK,
-    public static func configure(appId: String, clientSecret: String, isDebugMode: Bool) {
+    public static func configure(tenatId: String, clientSecret: String, isDebugMode: Bool) {
         TrueSpot.isDebugMode = isDebugMode
         //TSLocationManager.beaconUUID = beaconUUID
-        Credentials.appID = appId
+        Credentials.tenantId = tenatId
         Credentials.clientSecret = clientSecret
         BeaconServices().authenticate()
     }

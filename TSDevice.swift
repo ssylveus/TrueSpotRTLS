@@ -11,7 +11,7 @@ public struct TSDevice: Codable {
     public var tagIdentifier: String?
     public var assetIdentifier: String?
     public var assetIdentifierB: String?
-    public var assetType: String
+    public var assetType: String?
     public var batteryLevel: Int?
     public var pairedOnTimestamp: String?
     public var pairedByUsername: String?

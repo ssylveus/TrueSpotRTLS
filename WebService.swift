@@ -161,6 +161,7 @@ class WebService {
                             self.printRequestInfo(request: request, response: rawResponse)
                             completion(codable, response, nil)
                         } catch {
+                            self.printRequestInfo(request: request, response: error)
                             completion(nil, response, error)
                         }
                     } else {

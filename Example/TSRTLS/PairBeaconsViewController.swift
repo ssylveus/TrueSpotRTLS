@@ -40,11 +40,12 @@ class PairBeaconsViewController: UIViewController {
     }
     
     @IBAction func pair(_ sender: Any) {
-        guard let row = selectedRow, let assetIdentifier = beacons[row].assetIdentifier,
-              let asetType = beacons[row].assetType, let tagId = beacons[row].beaconIdentifier else {
+        guard let row = selectedRow, let tagId = beacons[row].beaconIdentifier else {
             return
         }
         
+        let assetIdentifier = "WAU2GAFC6FN010989"
+        let asetType = "Vehicle"
         TrueSpot.shared.pair(assetIdentifier: assetIdentifier, assetType: asetType, tagId: tagId) { device, error in
             print(device)
         }

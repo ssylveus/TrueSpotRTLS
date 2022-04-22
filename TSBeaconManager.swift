@@ -60,6 +60,8 @@ public class TSBeaconManager {
             let beacon = TSBeacon(beacon: clBeacon, currentLocation: currentLocation)
             beacon.proximity = clBeacon.proximity
             
+            //print(getKey(beacon: beacon))
+            //print("Minor: \(clBeacon.minor)")
             if let key = getKey(beacon: beacon) {
                 if let savedBeacon = TSBeaconManager.shared.beacons[key], let savedRSSI = savedBeacon.RSSI, let rssi = beacon.RSSI {
                     let beaconIdentifier = savedBeacon.beaconIdentifier
@@ -104,7 +106,12 @@ public class TSBeaconManager {
     /// - Returns: return a unique key using the beaconid, the major and minor.
     func getKey(beacon: TSBeacon) -> String? {
         if let UUID = beacon.beaconId, let minor = beacon.minor {
-            return "\(UUID)-\(minor)"
+            var minorValue = minor
+            if minor.hasPrefix("0") {
+                let start = minorValue.index(minorValue.startIndex, offsetBy: 1)
+                minorValue = String(minorValue[start...])
+            }
+            return "\(UUID.lowercased())-\(minorValue)"
         }
         
         return nil
@@ -112,7 +119,13 @@ public class TSBeaconManager {
     
     func getKey(device: TSDevice) -> String? {
         if let UUID = device.uuid?.replacingOccurrences(of: "-", with: ""), let minor = device.minor {
-            return "\(UUID)-\(minor)"
+            var minorValue = minor
+            if minor.hasPrefix("0") {
+                let start = minorValue.index(minorValue.startIndex, offsetBy: 1)
+                minorValue = String(minorValue[start...])
+            }
+            
+            return "\(UUID.lowercased())-\(minorValue)"
         }
         
         return nil

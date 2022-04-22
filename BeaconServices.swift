@@ -13,10 +13,9 @@ struct Authorization: Codable {
 
 struct Credentials {
     static var jwt: String?
-    static var appID: String?
     static var clientSecret: String?
     static var appInfo: TSApplication?
-    static var apiID = "5eacf68e333c811bb1ec3e7d"
+    static var tenantId: String?
 }
 
 struct API {
@@ -35,7 +34,7 @@ struct API {
     struct Endpoints {
         static let authorization = "api/api-authorizations"
         static let trackingDevices = "api/tracking-devices"
-        static let applications = "applications"
+        static let applications = "api/applications"
     }
 }
 
@@ -43,7 +42,7 @@ struct BeaconServices {
     
     func authenticate() {
         
-        guard let secret = Credentials.clientSecret else {
+        guard let secret = Credentials.clientSecret, let tenantId = Credentials.tenantId else {
             return
         }
         
@@ -54,13 +53,13 @@ struct BeaconServices {
             ])
             .setPath(path: API.Endpoints.authorization)
             .addParmeters(params: [
-                "apiId": Credentials.apiID
+                "tenantId": tenantId
             ])
             .setMethod(method: .post)
             .build(type: Authorization.self) { responseBody, responseHeader, error in
                 if let response = responseBody as? Authorization {
                     Credentials.jwt = response.jwt
-                    self.getAppinfo(appID: Credentials.appID ?? "")
+                    self.getAppinfo()
                     self.getTrackingDevices { devices, error in
                         
                     }
@@ -68,15 +67,13 @@ struct BeaconServices {
             }
     }
     
-    func getAppinfo(appID: String) {
-        if appID.isEmpty {
-            return
-        }
+    func getAppinfo() {
         
         WebService()
-            .setPath(path: API.Endpoints.applications + "/\(appID)")
+            .setPath(path: API.Endpoints.applications + "?self")
             .build(type: TSApplication.self) { responseBody, responseHeader, error in
-                //Credentials.appInfo = responseBody as? TSApplication
+                
+                Credentials.appInfo = responseBody as? TSApplication
                 
                 TSLocationManager.shared.startScanning()
             }
@@ -84,25 +81,14 @@ struct BeaconServices {
     
     func getTrackingDevices(completion: @escaping(_ devices: [TSDevice], _ error: Error?) -> Void) {
         
-//        WebService()
-//            .setPath(path: API.Endpoints.trackingDevices)
-//            .build(type: [TSDevice].self) { responseBody, responseHeader, error in
-//
-//                let devices = responseBody as? [TSDevice] ?? []
-//                TSBeaconManager.shared.updateTrackingDevices(devices: devices)
-//                completion(devices, error)
-//            }
-        
         WebService()
-            .setURL(url: "https://mocki.io/")
-            .setPath(path: "v1/619ced0c-3c97-4dbc-9826-db0e26df7dce")
+            .setPath(path: API.Endpoints.trackingDevices)
             .build(type: [TSDevice].self) { responseBody, responseHeader, error in
-                
+
                 let devices = responseBody as? [TSDevice] ?? []
                 TSBeaconManager.shared.updateTrackingDevices(devices: devices)
                 completion(devices, error)
             }
-    
     }
     
     func pair(assetIdentifier: String, assetType: String, tagId: String, completion: @escaping (_ device: TSDevice?, _ error: Error?) -> Void) {
@@ -110,7 +96,7 @@ struct BeaconServices {
         WebService()
             .setPath(path: API.Endpoints.trackingDevices + "/\(tagId)/pairings")
             .setMethod(method: .post)
-            .setBody(body: ["assetdentifier": assetIdentifier, "assetType": assetType])
+            .setBody(body: ["assetIdentifier": assetIdentifier, "assetType": assetType])
             .build(type: TSDevice.self) { responseBody, responseHeader, error in
                 
                 completion(responseBody as? TSDevice, error)
