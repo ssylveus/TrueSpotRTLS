@@ -31,7 +31,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '11.0'
 
   s.source_files = '**/*.{storyboard,swift}'
-  s.exclude_files = '**/*.{Example/}'
   s.resources = "**/*.{xcassets,mp3}"
 
   # s.resource_bundles = {
