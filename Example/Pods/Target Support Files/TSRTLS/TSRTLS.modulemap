@@ -1,6 +1,0 @@
-framework module TSRTLS {
-  umbrella header "TSRTLS-umbrella.h"
-
-  export *
-  module * { export * }
-}
