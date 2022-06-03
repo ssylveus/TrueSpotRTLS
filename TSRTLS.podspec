@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TSRTLS'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'TSRTLS is TrueSpot Real Time Location Services SDK.'
 
 # This description is used to generate tags and improve search results.
@@ -31,6 +31,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '11.0'
 
   s.source_files = '**/*.{storyboard,swift}'
+  s.exclude_files = ['Example/**']
   s.resources = "**/*.{xcassets,mp3}"
 
   # s.resource_bundles = {
