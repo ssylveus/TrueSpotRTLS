@@ -229,7 +229,7 @@ class ModarViewController: UIViewController {
     private func initializeAVPlayer() {
         do {
             if let fileURL = Bundle.main.path(forResource: "hollow", ofType: "mp3") {
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
                 audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fileURL))
             } else {
                 print("No file with specified name exists")
