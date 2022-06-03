@@ -20,16 +20,16 @@ struct Credentials {
 
 struct API {
     //DEV
-    static let authURL = "https://authprovider-d-us-c-api.azurewebsites.net/"
+    //static let authURL = "https://authprovider-d-us-c-api.azurewebsites.net/"
     
     //PROD
-    //static let authURL = "https://auth.truespot.com/"
+    static let authURL = "https://auth.truespot.com/"
     
     //DEV
-    static let RTLSBaseURL = "https://rtls-d-us-c-api.azurewebsites.net/"
+    //static let RTLSBaseURL = "https://rtls-d-us-c-api.azurewebsites.net/"
     
     //PROD
-    //static let RTLSBaseURL = "https://rtls.truespot.com/"
+    static let RTLSBaseURL = "https://rtls.truespot.com/"
     
     struct Endpoints {
         static let authorization = "api/api-authorizations"
