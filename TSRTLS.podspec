@@ -26,6 +26,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Steeven Sylveus' => 'steevensylveus@gmail.com' }
   s.source           = { :git => 'https://github.com/ssylveus/TrueSpotRTLS.git', :tag => s.version.to_s }
+  s.swift_version = '5.1'
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '11.0'
