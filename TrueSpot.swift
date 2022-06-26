@@ -88,5 +88,9 @@ extension TrueSpot {
     public func pair(assetIdentifier: String, assetType: String, tagId: String, completion: @escaping (_ device: TSDevice?, _ error: Error?) -> Void) {
         BeaconServices().pair(assetIdentifier: assetIdentifier, assetType: assetType, tagId: tagId, completion: completion)
     }
+    
+    func unpair(deviceID: String, pairingId: String, completion: @escaping (_ error: Error?) -> Void) {
+        BeaconServices().unpair(deviceID: deviceID, pairingId: pairingId, completion: completion)
+    }
 }
 

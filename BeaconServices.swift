@@ -18,18 +18,37 @@ struct Credentials {
     static var tenantId: String?
 }
 
+enum TSEnvironment {
+    case dev
+    case prod
+    
+    var authURL: String {
+        switch self {
+            
+        case .dev:
+            return "https://authprovider-d-us-c-api.azurewebsites.net/"
+        case .prod:
+            return "https://auth.truespot.com/"
+        }
+    }
+    
+    var baseURL: String {
+        switch self {
+            
+        case .dev:
+            return "https://rtls-d-us-c-api.azurewebsites.net/"
+        case .prod:
+            return "https://rtls.truespot.com/"
+        }
+    }
+}
+
 struct API {
-    //DEV
-    //static let authURL = "https://authprovider-d-us-c-api.azurewebsites.net/"
+    static let environment: TSEnvironment = .dev
     
-    //PROD
-    static let authURL = "https://auth.truespot.com/"
-    
-    //DEV
-    //static let RTLSBaseURL = "https://rtls-d-us-c-api.azurewebsites.net/"
-    
-    //PROD
-    static let RTLSBaseURL = "https://rtls.truespot.com/"
+    static let authURL = environment.authURL
+
+    static let RTLSBaseURL = environment.baseURL
     
     struct Endpoints {
         static let authorization = "api/api-authorizations"
@@ -100,6 +119,14 @@ struct BeaconServices {
             .build(type: TSDevice.self) { responseBody, responseHeader, error in
                 
                 completion(responseBody as? TSDevice, error)
+            }
+    }
+    
+    func unpair(deviceID: String, pairingId: String, completion: @escaping (_ error: Error?) -> Void) {
+        WebService()
+            .setPath(path: API.Endpoints.trackingDevices + "/\(deviceID)/pairings/\(pairingId)")
+            .setMethod(method: .delete).build { responseBody, responseHeader, error in
+                completion(error)
             }
     }
 }
